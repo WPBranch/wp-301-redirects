@@ -1,18 +1,18 @@
-.simple301redirects {
+.wp301redirects {
 	padding-right: 20px;
 	padding-top: 20px;
 	@import 'utilities/variable';
 	@import 'utilities/header';
 	@import 'utilities/form';
 
-	.simple301redirects__managelinks {
+	.wp301redirects__managelinks {
 		background: $white;
 		padding: 30px 5px 30px 20px;
 		border: 1px solid $light-darken;
 		box-shadow: 0 5px 5px rgba(#ebebeb, 0.05);
 		border-radius: 5px;
-		.simple301redirects__managelinks__info,
-		.simple301redirects__managelinks__item {
+		.wp301redirects__managelinks__info,
+		.wp301redirects__managelinks__item {
 			display: flex;
 			@media screen and (max-width: 767.98px) {
 				flex-wrap: wrap;
@@ -27,8 +27,8 @@
 				@media screen and (max-width: 767.98px) {
 					width: 100%;
 				}
-				.simple301redirects__managelinks__info__request,
-				.simple301redirects__managelinks__item__request {
+				.wp301redirects__managelinks__info__request,
+				.wp301redirects__managelinks__item__request {
 					width: calc(35% - 30px);
 					@media screen and (max-width: 1199.88px) {
 						width: calc(35% - 20px);
@@ -37,7 +37,7 @@
 						width: calc(35% - 10px);
 					}
 				}
-				.simple301redirects__managelinks__info__request {
+				.wp301redirects__managelinks__info__request {
 					margin-right: 60px;
 					@media screen and (max-width: 1199.88px) {
 						margin-right: 40px;
@@ -46,7 +46,7 @@
 						margin-right: 20px;
 					}
 				}
-				.simple301redirects__managelinks__item__icon {
+				.wp301redirects__managelinks__item__icon {
 					width: 60px;
 					height: 40px;
 					display: flex;
@@ -65,8 +65,8 @@
 						}
 					}
 				}
-				.simple301redirects__managelinks__info__destination,
-				.simple301redirects__managelinks__item__destination {
+				.wp301redirects__managelinks__info__destination,
+				.wp301redirects__managelinks__item__destination {
 					width: calc(65% - 30px);
 					@media screen and (max-width: 1199.88px) {
 						width: calc(65% - 20px);
@@ -77,10 +77,10 @@
 				}
 			}
 		}
-		.simple301redirects__managelinks__info {
+		.wp301redirects__managelinks__info {
 			margin-bottom: 25px;
-			.simple301redirects__managelinks__info__inner,
-			.simple301redirects__managelinks__info__destination {
+			.wp301redirects__managelinks__info__inner,
+			.wp301redirects__managelinks__info__destination {
 				h4 {
 					font-size: 20px;
 					font-weight: 500;
@@ -98,12 +98,12 @@
 				}
 			}
 		}
-		.simple301redirects__managelinks__item {
+		.wp301redirects__managelinks__item {
 			margin-bottom: 15px;
 			@media screen and (max-width: 991.88px) {
 				margin-bottom: 16px;
 			}
-			.simple301redirects__managelinks__item__control {
+			.wp301redirects__managelinks__item__control {
 				display: flex;
 				align-items: center;
 				padding-left: 20px;
@@ -114,12 +114,12 @@
 					padding-left: 0;
 					padding-top: 9px;
 				}
-				.Simple301Redirects__loading-dock,
+				.wp301redirects__loading-dock,
 				.lock__button,
 				> button {
 					margin-right: 10px;
 				}
-				.simple301redirects__icon__button {
+				.wp301redirects__icon__button {
 					background: none;
 					border: none;
 					outline: none;
@@ -138,7 +138,7 @@
 						}
 					}
 				}
-				.simple301redirects__button {
+				.wp301redirects__button {
 					min-height: 36px;
 					display: inline-flex;
 					justify-content: center;
@@ -202,7 +202,7 @@
 				}
 			}
 		}
-		.simple301redirects__wildcards {
+		.wp301redirects__wildcards {
 			display: flex;
 			align-items: center;
 			input[type='checkbox'] {
@@ -210,9 +210,9 @@
 				margin-right: 10px;
 			}
 		}
-		&.simple301redirects__managelinks--activated-btl {
-			.simple301redirects__managelinks__info,
-			.simple301redirects__managelinks__item {
+		&.wp301redirects__managelinks--activated-btl {
+			.wp301redirects__managelinks__info,
+			.wp301redirects__managelinks__item {
 				&__inner {
 					width: calc(100% - 210px);
 					@media screen and (max-width: 991.88px) {
@@ -220,7 +220,7 @@
 					}
 				}
 			}
-			.simple301redirects__wildcards {
+			.wp301redirects__wildcards {
 				display: flex;
 				align-items: center;
 				input[type='checkbox'] {
@@ -231,7 +231,7 @@
 		}
 	}
 
-	.simple301redirects__betterlinks {
+	.wp301redirects__betterlinks {
 		background: $white;
 		padding: 30px;
 		border: 1px solid $light-darken;
@@ -242,7 +242,7 @@
 		border-left: 3px solid $blue;
 		margin-top: 20px;
 		position: relative;
-		.simple301redirects__betterlinks__close__button {
+		.wp301redirects__betterlinks__close__button {
 			position: absolute;
 			top: 20px;
 			right: 20px;
@@ -256,10 +256,10 @@
 				width: 13px;
 			}
 		}
-		.simple301redirects__betterlinks__icon {
+		.wp301redirects__betterlinks__icon {
 			margin-right: 20px;
 		}
-		.simple301redirects__betterlinks__content {
+		.wp301redirects__betterlinks__content {
 			margin-bottom: 10px;
 			h3 {
 				font-size: 20px;
@@ -325,7 +325,7 @@
 				}
 			}
 		}
-		.simple301redirects__betterlinks__control {
+		.wp301redirects__betterlinks__control {
 			button {
 				display: inline-flex;
 				justify-content: center;
@@ -370,14 +370,14 @@
 		}
 	}
 
-	.simple301redirects__documentation {
+	.wp301redirects__documentation {
 		background: $white;
 		padding: 20px;
 		border: 1px solid $light-darken;
 		box-shadow: 0 5px 5px rgba(#ebebeb, 0.05);
 		border-radius: 5px;
 		margin-top: 20px;
-		.simple301redirects__documentation__panel-header {
+		.wp301redirects__documentation__panel-header {
 			display: flex;
 			align-items: center;
 			cursor: pointer;
@@ -415,7 +415,7 @@
 				outline: none;
 			}
 		}
-		.simple301redirects__documentation__panel-body {
+		.wp301redirects__documentation__panel-body {
 			.documentation {
 				margin-top: 30px;
 				padding-left: 15px;
@@ -469,13 +469,13 @@
 		}
 	}
 
-	.simple301redirects__panel__divider {
+	.wp301redirects__panel__divider {
 		border-radius: 5px;
 		background: $white;
 		padding: 20px;
 		border: 1px solid $light-darken;
 		box-shadow: 0 5px 5px rgba(#ebebeb, 0.05);
-		.simple301redirects__import {
+		.wp301redirects__import {
 			margin-bottom: 60px;
 			position: relative;
 			&:before {
@@ -487,10 +487,10 @@
 				border-bottom: 2px solid $light-darken;
 			}
 		}
-		.simple301redirects__import,
-		.simple301redirects__export {
-			.simple301redirects__import__head,
-			.simple301redirects__export__head {
+		.wp301redirects__import,
+		.wp301redirects__export {
+			.wp301redirects__import__head,
+			.wp301redirects__export__head {
 				h4 {
 					font-size: 20px;
 					font-weight: 500;
@@ -505,7 +505,7 @@
 					margin-top: 0;
 				}
 			}
-			.simple301redirects-button-group {
+			.wp301redirects-button-group {
 				display: flex;
 				flex-direction: column;
 				align-items: flex-start;
@@ -604,12 +604,12 @@
 			visibility: visible;
 		}
 	}
-	.Simple301Redirects__content__wrapper {
+	.wp301redirects__content__wrapper {
 		display: flex;
 		@media screen and (max-width: 1199.98px) {
 			flex-wrap: wrap;
 		}
-		.Simple301Redirects__main__content {
+		.wp301redirects__main__content {
 			width: calc(100% - 380px);
 			@media screen and (max-width: 1439.98px) {
 				width: calc(100% - 270px);
@@ -618,7 +618,7 @@
 				width: 100%;
 			}
 		}
-		.Simple301Redirects__archive__sidebar {
+		.wp301redirects__archive__sidebar {
 			width: 360px;
 			margin-left: 20px;
 			@media screen and (max-width: 1439.98px) {
@@ -632,7 +632,7 @@
 		}
 	}
 
-	.Simple301Redirects__loading-dock {
+	.wp301redirects__loading-dock {
 		background-color: white;
 		display: inline-flex;
 		justify-content: center;
@@ -640,7 +640,7 @@
 		width: 84px;
 	}
 
-	.Simple301Redirects__loading__button__submit {
+	.wp301redirects__loading__button__submit {
 		cursor: pointer;
 		width: 84px;
 		height: 36px;
@@ -667,11 +667,11 @@
 			color: white;
 		}
 
-		&.Simple301Redirects__popout {
-			animation: Simple301Redirects__circle-to-button 0.4s linear forwards;
+		&.wp301redirects__popout {
+			animation: wp301redirects__circle-to-button 0.4s linear forwards;
 		}
-		&.Simple301Redirects__return {
-			animation: Simple301Redirects__fade-to-original 0.3s linear;
+		&.wp301redirects__return {
+			animation: wp301redirects__fade-to-original 0.3s linear;
 			&:hover {
 				background: darken($success, 1%);
 				color: white;
@@ -679,26 +679,26 @@
 		}
 	}
 
-	.Simple301Redirects__loaded {
-		.Simple301Redirects__loading__button__submit {
+	.wp301redirects__loaded {
+		.wp301redirects__loading__button__submit {
 			background-color: darken($success, 1%);
-			animation: Simple301Redirects__button-to-circle 0.25s linear forwards;
+			animation: wp301redirects__button-to-circle 0.25s linear forwards;
 			animation-delay: 0s;
 		}
-		#Simple301Redirects__load {
-			animation: Simple301Redirects__loading-circle 1s linear forwards;
+		#wp301redirects__load {
+			animation: wp301redirects__loading-circle 1s linear forwards;
 			animation-delay: 0.4s;
 		}
 	}
 
-	#Simple301Redirects__load,
-	#Simple301Redirects__load-b {
+	#wp301redirects__load,
+	#wp301redirects__load-b {
 		display: none;
 		position: absolute;
 		width: 40px;
 		height: 40px;
 		opacity: 0;
-		.Simple301Redirects__loading-inner {
+		.wp301redirects__loading-inner {
 			stroke: {
 				dasharray: 900;
 				// Thickness of line
@@ -710,9 +710,9 @@
 			fill: transparent;
 		}
 	}
-	#Simple301Redirects__load-b {
+	#wp301redirects__load-b {
 		opacity: 0;
-		.Simple301Redirects__loading-inner {
+		.wp301redirects__loading-inner {
 			stroke: darken($success, 1%);
 		}
 	}
@@ -722,7 +722,7 @@
 		display: none;
 	}
 
-	@keyframes Simple301Redirects__loading-circle {
+	@keyframes wp301redirects__loading-circle {
 		0% {
 			opacity: 1;
 			stroke-dashoffset: 0;
@@ -737,7 +737,7 @@
 		}
 	}
 
-	@keyframes Simple301Redirects__button-to-circle {
+	@keyframes wp301redirects__button-to-circle {
 		0% {
 			width: 84px;
 			color: darken($success, 1%);
@@ -760,7 +760,7 @@
 		}
 	}
 
-	@keyframes Simple301Redirects__circle-to-button {
+	@keyframes wp301redirects__circle-to-button {
 		0% {
 			border-color: darken($success, 1%);
 			background-color: darken($success, 1%);
@@ -779,7 +779,7 @@
 		}
 	}
 
-	@keyframes Simple301Redirects__fade-to-original {
+	@keyframes wp301redirects__fade-to-original {
 		0% {
 			background-color: darken($success, 1%);
 		}

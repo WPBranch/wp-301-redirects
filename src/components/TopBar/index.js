@@ -10,11 +10,11 @@ const defaultProps = {};
 export default function TopBar(props) {
 	return (
 		<React.Fragment>
-			<div className="simple301redirects__topbar">
-				<div className="simple301redirects__topbar__logo">
+			<div className="wp301redirects__topbar">
+				<div className="wp301redirects__topbar__logo">
 					<img width="40" src={plugin_root_url + 'assets/images/logo.png'} alt="logo" />
 				</div>
-				<h3 className="simple301redirects__topbar__title">{__('WP 301 Redirects', 'wp-301-redirects')}</h3>
+				<h3 className="wp301redirects__topbar__title">{__('WP 301 Redirects', 'wp-301-redirects')}</h3>
 			</div>
 		</React.Fragment>
 	);

@@ -6,7 +6,7 @@ class Menu {
     {
         add_action('admin_menu', array($this,'create_menu'));
         // if submitted, process the data
-        if (isset($_POST['301_redirects'])) {
+        if (isset($_POST['wp_301_redirects'])) {
             add_action('admin_init', array($this,'save_redirects'));
         }
     }
@@ -23,6 +23,6 @@ class Menu {
 
     public function load_main_template()
 	{
-		echo '<div id="simple301redirectsbody" class="simple301redirects"></div>';
+		echo '<div id="wp301redirectsbody" class="wp301redirects"></div>';
 	}
 }

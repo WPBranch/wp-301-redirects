@@ -7,17 +7,17 @@ class Tools
     {
         add_action('admin_init', [$this, 'export_data']);
         add_action('admin_init', [$this, 'import_data']);
-        add_action('wp_ajax_simple301redirects/admin/get_import_info', [$this, 'get_import_info']);
+        add_action('wp_ajax_wp301redirects/admin/get_import_info', [$this, 'get_import_info']);
     }
     public function export_data()
     {
         $page = isset($_GET['page']) ? $_GET['page'] : '';
         $export = isset($_REQUEST['export']) ? $_REQUEST['export'] : false;
         if ($page === 'wp_redirect_options' && $export == true && current_user_can('manage_options')) {
-            check_ajax_referer('simple301redirects', 'security');
+            check_ajax_referer('wp301redirects', 'security');
             $content = get_option(WP301REDIRECTS_SETTINGS_NAME);
             $content = $this->prepare_csv_file_data(get_option(WP301REDIRECTS_SETTINGS_NAME));
-            $filename = 'simple-301-redirects.' . date('Y-m-d') . '.csv';
+            $filename = 'wp-301-redirects-' . date('Y-m-d') . '.csv';
             header('Content-Type: application/csv');
             header('Content-Disposition: attachment; filename="'.$filename.'";');
             $f = fopen('php://output', 'w');
@@ -46,13 +46,13 @@ class Tools
         $page = isset($_GET['page']) ? $_GET['page'] : '';
         $import = isset($_REQUEST['import']) ? $_REQUEST['import'] : false;
         if ($page === 'wp_redirect_options' && $import == true && current_user_can('manage_options')) {
-            check_ajax_referer('simple301redirects', 'security');
+            check_ajax_referer('wp301redirects', 'security');
             $file = $_FILES['upload_file'];
             if (!empty($file['tmp_name']) && 'csv' === pathinfo($file['name'])[ 'extension' ]) {
                 $fileContent = fopen($file['tmp_name'], "r");
                 if (!empty($fileContent)) {
                     $results = $this->process_data($fileContent);
-                    set_transient('simple_301_redirects_import_info', json_encode($results), 60 * 60 * 5);
+                    set_transient('wp_301_redirects_import_info', json_encode($results), 60 * 60 * 5);
                 }
             }
         }
@@ -86,10 +86,10 @@ class Tools
     }
     public function get_import_info()
     {
-        check_ajax_referer('simple301redirects', 'security');
-        $results = get_transient('simple_301_redirects_import_info');
+        check_ajax_referer('wp301redirects', 'security');
+        $results = get_transient('wp_301_redirects_import_info');
         if ($results) {
-            delete_transient('simple_301_redirects_import_info');
+            delete_transient('wp_301_redirects_import_info');
             wp_send_json_success($results);
             wp_die();
         }

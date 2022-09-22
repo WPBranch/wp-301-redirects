@@ -7,5 +7,11 @@
 			}
 		],
 		"@babel/preset-react"
-	]
+	],
+	"plugins": [
+        [
+            "@wordpress/babel-plugin-makepot",
+            { "output": "languages/wp-301-redirects.pot" }
+        ]
+    ]
 }

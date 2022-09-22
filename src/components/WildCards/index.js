@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { __ } from '@wordpress/i18n';
 import axios from 'axios';
 import PropTypes from 'prop-types';
-import { s3r_nonce } from './../../utils/helper';
+import { wpr_nonce } from './../../utils/helper';
 const propTypes = {};
 
 const defaultProps = {};
@@ -13,8 +13,8 @@ export default function WildCards(props) {
 	const [isFetch, setFetch] = useState(false);
 	useEffect(() => {
 		let form_data = new FormData();
-		form_data.append('action', 'simple301redirects/admin/get_wildcard');
-		form_data.append('security', s3r_nonce);
+		form_data.append('action', 'wp301redirects/admin/get_wildcard');
+		form_data.append('security', wpr_nonce);
 		axios.post(ajaxurl, form_data).then(
 			(response) => {
 				setChecked(response.data.data == 'true' ? true : false);
@@ -29,8 +29,8 @@ export default function WildCards(props) {
 		setSavedText('Saving...');
 		setChecked(param);
 		let form_data = new FormData();
-		form_data.append('action', 'simple301redirects/admin/wildcard');
-		form_data.append('security', s3r_nonce);
+		form_data.append('action', 'wp301redirects/admin/wildcard');
+		form_data.append('security', wpr_nonce);
 		form_data.append('toggle', param);
 		return axios.post(ajaxurl, form_data).then(
 			(response) => {
@@ -51,10 +51,10 @@ export default function WildCards(props) {
 	return (
 		<React.Fragment>
 			{isFetch && (
-				<div className="simple301redirects__wildcards">
+				<div className="wp301redirects__wildcards">
 					<input type="checkbox" name="wildcard" id="wildcard" defaultChecked={checked} onChange={() => onChangeHandler(!checked)} />
 					<label htmlFor="wildcard">
-						{__('Use Wildcards?', 'simple-301-redirects')} {savedText}
+						{__('Use Wildcards?', 'wp-301-redirects')} {savedText}
 					</label>
 				</div>
 			)}

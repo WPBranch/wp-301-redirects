@@ -5,7 +5,7 @@ const path = require('path');
 const config = {
 	...defaultConfig,
 	entry: {
-		'simple-301-redirects.core.min': './src/index.js',
+		'wp-301-redirects.core.min': './src/index.js',
 	},
 	output: {
 		path: path.resolve(__dirname, 'assets/js'),

@@ -73,7 +73,7 @@ if (!class_exists("WP_301_Redirects")) {
 			define('WP301REDIRECTS_SETTINGS_NAME', 'wp_301_redirects');
 			define('WP301REDIRECTS_PLUGIN_FILE', __FILE__);
 			define('WP301REDIRECTS_PLUGIN_BASENAME', plugin_basename(__FILE__));
-			define('WP301REDIRECTS_PLUGIN_SLUG', 'simple-301-redirects');
+			define('WP301REDIRECTS_PLUGIN_SLUG', 'wp-301-redirects');
 			define('WP301REDIRECTS_PLUGIN_ROOT_URI', plugins_url('/', __FILE__));
 			define('WP301REDIRECTS_ROOT_DIR_PATH', plugin_dir_path(__FILE__));
 			define('WP301REDIRECTS_ASSETS_DIR_PATH', WP301REDIRECTS_ROOT_DIR_PATH . 'assets/');
@@ -96,7 +96,7 @@ if (!class_exists("WP_301_Redirects")) {
 
 		public function load_textdomain()
 		{
-			load_plugin_textdomain('simple-301-redirects', false, dirname(dirname(plugin_basename(__FILE__))) . '/languages/');
+			load_plugin_textdomain('wp-301-redirects', false, dirname(dirname(plugin_basename(__FILE__))) . '/languages/');
 		}
 		public function load_installer()
 		{
@@ -113,14 +113,14 @@ if (!class_exists("WP_301_Redirects")) {
 		public function redirect() {
 			// this is what the user asked for (strip out home portion, case insensitive)
 
-			$redirects = get_option('301_redirects');
+			$redirects = get_option('wp_301_redirects');
 			if (!empty($redirects)) {
 				$userrequest = \Kamal\Wp301Redirects\Helper::str_ireplace(get_option('home'),'',$this->get_address());
 				$userrequest = ltrim($userrequest);
 				$param = explode('?', $userrequest, 2);
 				$userrequest = current($param);
 
-				$wildcard = get_option('301_redirects_wildcard');
+				$wildcard = get_option('wp_301_redirects_wildcard');
 				$do_redirect = '';
 
 				// compare user request to each 301 stored in the db

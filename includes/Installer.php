@@ -10,8 +10,8 @@ class Installer {
 
     public function set_version_number()
     {
-        if (get_option('simple301redirects_version') != WP301REDIRECTS_VERSION) {
-			update_option('simple301redirects_version', WP301REDIRECTS_VERSION);
+        if (get_option('wp301redirects_version') != WP301REDIRECTS_VERSION) {
+			update_option('wp301redirects_version', WP301REDIRECTS_VERSION);
 		}
     }
 }

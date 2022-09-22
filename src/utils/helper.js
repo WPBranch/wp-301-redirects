@@ -1,13 +1,11 @@
 import axios from 'axios';
 export const {
-	s3r_nonce,
+	wpr_nonce,
 	plugin_root_url,
 	plugin_root_path,
 	site_url,
 	route_path,
-	is_betterlinks_activated,
-	hide_btl_notice,
-} = window.Simple301Redirects;
+} = window.Wp301Redirects;
 
 export const copyToClipboard = (copyText) => {
 	var tempInput = document.createElement('input');
@@ -21,8 +19,8 @@ export const copyToClipboard = (copyText) => {
 
 export const installPlugin = (slug) => {
 	let form_data = new FormData();
-	form_data.append('action', 'simple301redirects/admin/install_plugin');
-	form_data.append('security', s3r_nonce);
+	form_data.append('action', 'wp301redirects/admin//install_plugin');
+	form_data.append('security', wpr_nonce);
 	form_data.append('slug', slug);
 	return axios.post(ajaxurl, form_data).then(
 		(response) => {
@@ -36,8 +34,8 @@ export const installPlugin = (slug) => {
 
 export const activePlugin = (slug) => {
 	let form_data = new FormData();
-	form_data.append('action', 'simple301redirects/admin/activate_plugin');
-	form_data.append('security', s3r_nonce);
+	form_data.append('action', 'wp301redirects/admin//activate_plugin');
+	form_data.append('security', wpr_nonce);
 	form_data.append('basename', slug);
 	return axios.post(ajaxurl, form_data).then(
 		(response) => {

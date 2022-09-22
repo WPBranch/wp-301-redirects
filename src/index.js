@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Simple301Redirects from './containers/Simple301Redirects';
+import WP301Redirects from './containers/WP301Redirects';
 
 document.addEventListener('DOMContentLoaded', function () {
-	ReactDOM.render(<Simple301Redirects />, document.getElementById('simple301redirectsbody'));
+	ReactDOM.render(<WP301Redirects />, document.getElementById('wp301redirectsbody'));
 });

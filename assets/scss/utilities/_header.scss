@@ -1,4 +1,4 @@
-.simple301redirects__topbar {
+.wp301redirects__topbar {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -8,14 +8,14 @@
     box-shadow: 0 5px 5px rgba(#ebebeb, 0.05);
     margin-bottom: 20px;
     border-radius: 5px;
-    .simple301redirects__topbar__logo{
+    .wp301redirects__topbar__logo{
         display: flex;
         margin-right: 15px;
         img{
             height: 40px;
         }
     }
-    .simple301redirects__topbar__title{
+    .wp301redirects__topbar__title{
         font-size: 23px;
         font-weight: 400;
         color: $dark;

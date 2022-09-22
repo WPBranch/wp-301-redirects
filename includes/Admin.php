@@ -8,8 +8,8 @@ class Admin {
         $this->load_assets();
         $this->init_ajax();
         $this->init_tools();
-        $this->usage_tracker();
-        add_filter('Simple301Redirects/Admin/skip_no_conflict', [$this, 'skip_no_conflict']);
+        // $this->usage_tracker();
+        add_filter('Wp301Redirects/Admin/skip_no_conflict', [$this, 'skip_no_conflict']);
     }
     public function add_menu()
     {
@@ -43,11 +43,11 @@ class Admin {
             'item_id'      => ''
         ] );
         $tracker->set_notice_options(array(
-            'notice' => __( 'Want to help make <strong>Simple 301 Redirects</strong> even more awesome? You can get a <strong>10% discount</strong> coupon on our Premium products if you allow us to track the non-sensitive usage data.', 'simple-301-redirects' ),
+            'notice' => __( 'Want to help make <strong>WP 301 Redirects</strong> even more awesome? You can get a <strong>10% discount</strong> coupon on our Premium products if you allow us to track the non-sensitive usage data.', 'wp-301-redirects' ),
             'extra_notice' => __( 'We collect non-sensitive diagnostic data and plugin usage information. 
             Your site URL, WordPress & PHP version, plugins & themes and email address to send you the 
             discount coupon. This data lets us make sure this plugin always stays compatible with the most 
-            popular plugins and themes. No spam, I promise.', 'simple-301-redirects' ),
+            popular plugins and themes. No spam, I promise.', 'wp-301-redirects' ),
         ));
         $tracker->init();
     }
