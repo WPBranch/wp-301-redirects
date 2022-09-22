@@ -17,7 +17,7 @@ WP 301 Redirects is easy to use, and provides an easy method for redirecting req
 Redirecting or redirecting a URL is a very useful tool in search engine optimization. It helps search engines find your website more easily by directing them to the new website. Some users may even bookmark the old URL, so it's important to redirect it to the new URL.
 
 Got "404 not found" errors? Launching a marketing campaign with a new URL? Or relaunching your website with a new URL? Let's redirect your old URLs to new ones automatically by creating 301 redirects to existing pages.
-
+f
 WP 301 Redirects provides an easy method of redirecting requests to another page on your site or elsewhere on the web. It's especially handy when you migrate a site to WordPress and can't preserve your URL structure.
 
 By setting up 301 redirects from your old pages to your new pages, any incoming links on search engines will be redirected to your new pages. WordPress automatically creates a redirect from your old page to your new page and posts. Using 301 redirects ensures that search engines index your new pages instead of your old pages.
