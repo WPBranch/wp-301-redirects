@@ -1,5 +1,5 @@
 <?php
-namespace Simple301Redirects\Admin;
+namespace Kamal\Wp301Redirects\Admin;
 
 class Tools
 {
@@ -13,10 +13,10 @@ class Tools
     {
         $page = isset($_GET['page']) ? $_GET['page'] : '';
         $export = isset($_REQUEST['export']) ? $_REQUEST['export'] : false;
-        if ($page === '301options' && $export == true && current_user_can('manage_options')) {
+        if ($page === 'wp_redirect_options' && $export == true && current_user_can('manage_options')) {
             check_ajax_referer('simple301redirects', 'security');
-            $content = get_option(SIMPLE301REDIRECTS_SETTINGS_NAME);
-            $content = $this->prepare_csv_file_data(get_option(SIMPLE301REDIRECTS_SETTINGS_NAME));
+            $content = get_option(WP301REDIRECTS_SETTINGS_NAME);
+            $content = $this->prepare_csv_file_data(get_option(WP301REDIRECTS_SETTINGS_NAME));
             $filename = 'simple-301-redirects.' . date('Y-m-d') . '.csv';
             header('Content-Type: application/csv');
             header('Content-Disposition: attachment; filename="'.$filename.'";');
@@ -45,7 +45,7 @@ class Tools
     {
         $page = isset($_GET['page']) ? $_GET['page'] : '';
         $import = isset($_REQUEST['import']) ? $_REQUEST['import'] : false;
-        if ($page === '301options' && $import == true && current_user_can('manage_options')) {
+        if ($page === 'wp_redirect_options' && $import == true && current_user_can('manage_options')) {
             check_ajax_referer('simple301redirects', 'security');
             $file = $_FILES['upload_file'];
             if (!empty($file['tmp_name']) && 'csv' === pathinfo($file['name'])[ 'extension' ]) {
@@ -69,13 +69,13 @@ class Tools
                 continue;
             }
             $item = array_combine($this->link_header, $item);
-            $item = \Simple301Redirects\Helper::sanitize_text_or_array_field($item);
+            $item = \Kamal\Wp301Redirects\Helper::sanitize_text_or_array_field($item);
             $data[$item['request']] = $item['destination'];
         }
         if (count($data) > 0) {
-            $oldData = get_option(SIMPLE301REDIRECTS_SETTINGS_NAME);
-            $value = (!empty($oldData) ? array_unique(array_merge(get_option(SIMPLE301REDIRECTS_SETTINGS_NAME), $data)) : $data);
-            $restuls = update_option(SIMPLE301REDIRECTS_SETTINGS_NAME, $value);
+            $oldData = get_option(WP301REDIRECTS_SETTINGS_NAME);
+            $value = (!empty($oldData) ? array_unique(array_merge(get_option(WP301REDIRECTS_SETTINGS_NAME), $data)) : $data);
+            $restuls = update_option(WP301REDIRECTS_SETTINGS_NAME, $value);
             if ($restuls) {
                 $message = 'All Data has been successfully Imported.';
             } else {

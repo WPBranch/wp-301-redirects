@@ -1,5 +1,5 @@
 <?php
-namespace Simple301Redirects;
+namespace Kamal\Wp301Redirects;
 
 class Helper
 {
@@ -11,7 +11,7 @@ class Helper
 
     public static function plugin_page_hook_suffix($hook)
     {
-        if ($hook == 'settings_page_301options') {
+        if ($hook == 'settings_page_wp_redirect_options') {
             return true;
         }
         return false;

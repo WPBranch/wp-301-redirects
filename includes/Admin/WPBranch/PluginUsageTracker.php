@@ -1,5 +1,5 @@
 <?php
-namespace Simple301Redirects\Admin\WPDev;
+namespace  Kamal\Wp301Redirects\Admin\WPBranch;
 
 /**
  * WPInsights_Betterlinks

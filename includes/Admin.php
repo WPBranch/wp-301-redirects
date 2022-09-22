@@ -1,5 +1,5 @@
 <?php
-namespace Simple301Redirects;
+namespace Kamal\Wp301Redirects;
 
 class Admin {
     public function __construct()
@@ -37,10 +37,10 @@ class Admin {
     }
     public function usage_tracker()
     {
-        $tracker = Admin\WPDev\PluginUsageTracker::get_instance( SIMPLE301REDIRECTS_PLUGIN_FILE, [
+        $tracker = Admin\WPBranch\PluginUsageTracker::get_instance( WP301REDIRECTS_PLUGIN_FILE, [
             'opt_in'       => true,
             'goodbye_form' => true,
-            'item_id'      => 'c1e613119bf3e9188767'
+            'item_id'      => ''
         ] );
         $tracker->set_notice_options(array(
             'notice' => __( 'Want to help make <strong>Simple 301 Redirects</strong> even more awesome? You can get a <strong>10% discount</strong> coupon on our Premium products if you allow us to track the non-sensitive usage data.', 'simple-301-redirects' ),

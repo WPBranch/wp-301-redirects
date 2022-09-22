@@ -1,16 +1,16 @@
 <?php
 /**
- * Plugin Name:     Simple 301 Redirects
- * Plugin URI:      https://wordpress.org/plugins/simple-301-redirects/
+ * Plugin Name:     WP 301 Redirects
+ * Plugin URI:      https://wordpress.org/plugins/wp-301-redirects/
  * Description:     Create a list of URLs that you would like to 301 redirect to another page or site. Now with wildcard support.
- * Author:          WPDeveloper
- * Author URI:      https://wpdeveloper.net/
- * Text Domain:     simple-301-redirects
+ * Author:          WPBranch
+ * Author URI:      https://wpbranch.com/
+ * Text Domain:     wp-301-redirects
  * Domain Path:     /languages
- * Version:         2.0.7
+ * Version:         1.0.0
  */
 
-/*  Copyright 2009-2021  WPDeveloper
+/*  Copyright 2009-2021
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -36,9 +36,9 @@ if (file_exists(dirname(__FILE__) . '/vendor/autoload.php')) {
 }
 
 
-if (!class_exists("Simple301redirects")) {
+if (!class_exists("WP_301_Redirects")) {
 
-	final class Simple301Redirects {
+	final class WP_301_Redirects {
 
 		private function __construct()
 		{
@@ -46,7 +46,7 @@ if (!class_exists("Simple301redirects")) {
 			add_action('plugins_loaded', [$this, 'on_plugins_loaded']);
 
 			if( ! defined('WP_CLI') || ( defined('WP_CLI') && ! WP_CLI ) ) {
-				add_action('simple301redirects_loaded', [$this, 'init_plugin']);
+				add_action('wp301redirects_loaded', [$this, 'init_plugin']);
 				// add the redirect action, high priority
 				add_action('init', array($this,'redirect'), 1);
 			}
@@ -64,20 +64,20 @@ if (!class_exists("Simple301redirects")) {
 
 		public function on_plugins_loaded()
 		{
-			do_action('simple301redirects_loaded');
+			do_action('wp301redirects_loaded');
 		}
 
 		public function define_constants()
 		{
-			define('SIMPLE301REDIRECTS_VERSION', '2.0.7');
-			define('SIMPLE301REDIRECTS_SETTINGS_NAME', '301_redirects');
-			define('SIMPLE301REDIRECTS_PLUGIN_FILE', __FILE__);
-			define('SIMPLE301REDIRECTS_PLUGIN_BASENAME', plugin_basename(__FILE__));
-			define('SIMPLE301REDIRECTS_PLUGIN_SLUG', 'simple-301-redirects');
-			define('SIMPLE301REDIRECTS_PLUGIN_ROOT_URI', plugins_url('/', __FILE__));
-			define('SIMPLE301REDIRECTS_ROOT_DIR_PATH', plugin_dir_path(__FILE__));
-			define('SIMPLE301REDIRECTS_ASSETS_DIR_PATH', SIMPLE301REDIRECTS_ROOT_DIR_PATH . 'assets/');
-			define('SIMPLE301REDIRECTS_ASSETS_URI', SIMPLE301REDIRECTS_PLUGIN_ROOT_URI . 'assets/');
+			define('WP301REDIRECTS_VERSION', '1.0.0');
+			define('WP301REDIRECTS_SETTINGS_NAME', 'wp_301_redirects');
+			define('WP301REDIRECTS_PLUGIN_FILE', __FILE__);
+			define('WP301REDIRECTS_PLUGIN_BASENAME', plugin_basename(__FILE__));
+			define('WP301REDIRECTS_PLUGIN_SLUG', 'simple-301-redirects');
+			define('WP301REDIRECTS_PLUGIN_ROOT_URI', plugins_url('/', __FILE__));
+			define('WP301REDIRECTS_ROOT_DIR_PATH', plugin_dir_path(__FILE__));
+			define('WP301REDIRECTS_ASSETS_DIR_PATH', WP301REDIRECTS_ROOT_DIR_PATH . 'assets/');
+			define('WP301REDIRECTS_ASSETS_URI', WP301REDIRECTS_PLUGIN_ROOT_URI . 'assets/');
 		}
 
 		/**
@@ -89,7 +89,7 @@ if (!class_exists("Simple301redirects")) {
 		{
 			$this->load_textdomain();
 			if (is_admin()) {
-				new Simple301Redirects\Admin();
+				new Kamal\Wp301Redirects\Admin();
 			}
 			$this->load_installer();
 		}
@@ -100,7 +100,7 @@ if (!class_exists("Simple301redirects")) {
 		}
 		public function load_installer()
 		{
-			$Installer = new Simple301Redirects\Installer();
+			$Installer = new Kamal\Wp301Redirects\Installer();
 			$Installer->migrate();
 		}
 		/**
@@ -115,7 +115,7 @@ if (!class_exists("Simple301redirects")) {
 
 			$redirects = get_option('301_redirects');
 			if (!empty($redirects)) {
-				$userrequest = \Simple301Redirects\Helper::str_ireplace(get_option('home'),'',$this->get_address());
+				$userrequest = \Kamal\Wp301Redirects\Helper::str_ireplace(get_option('home'),'',$this->get_address());
 				$userrequest = ltrim($userrequest);
 				$param = explode('?', $userrequest, 2);
 				$userrequest = current($param);
@@ -190,14 +190,14 @@ if (!class_exists("Simple301redirects")) {
 /**
  * Initializes the main plugin
  *
- * @return \Simple301Redirects
+ * @return \WP_301_Redirects
  */
-if (!function_exists('Simple301Redirects_Start')) {
-	function Simple301Redirects_Start()
+if (!function_exists('WP_301Redirects_Start')) {
+	function WP_301Redirects_Start()
 	{
-		return Simple301Redirects::init();
+		return WP_301_Redirects::init();
 	}
 }
 
 // Plugin Start
-Simple301Redirects_Start();
+WP_301Redirects_Start();

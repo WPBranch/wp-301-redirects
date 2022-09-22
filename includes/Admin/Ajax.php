@@ -1,5 +1,5 @@
 <?php
-namespace Simple301Redirects\Admin;
+namespace  Kamal\Wp301Redirects\Admin;
 
 class Ajax {
     public function __construct()
@@ -34,7 +34,7 @@ class Ajax {
         check_ajax_referer('simple301redirects', 'security');
         if( ! current_user_can( 'manage_options' ) ) wp_die();
         $slug = isset($_POST['slug']) ? sanitize_text_field($_POST['slug']) : '';
-        $result = \Simple301Redirects\Helper::install_plugin($slug);
+        $result = \Kamal\Wp301Redirects\Helper::install_plugin($slug);
         if (is_wp_error($result)) {
             wp_send_json_error($result->get_error_message());
         }

@@ -1,5 +1,5 @@
 <?php
-namespace Simple301Redirects\Admin;
+namespace Kamal\Wp301Redirects\Admin;
 
 class Assets {
     public function __construct()
@@ -13,7 +13,7 @@ class Assets {
 	 */
 	public function plugin_scripts($hook)
 	{
-		if (\Simple301Redirects\Helper::plugin_page_hook_suffix($hook)) {
+		if (\Kamal\Wp301Redirects\Helper::plugin_page_hook_suffix($hook)) {
 			add_action(
 				'wp_print_scripts',
 				function () {
@@ -38,23 +38,23 @@ class Assets {
 				},
 				1
 			);
-			wp_enqueue_style('simple-301-redirects-admin-style', SIMPLE301REDIRECTS_ASSETS_URI . 'css/simple-301-redirects.css', [], filemtime(SIMPLE301REDIRECTS_ASSETS_DIR_PATH . 'css/simple-301-redirects.css'), 'all');
+			wp_enqueue_style('simple-301-redirects-admin-style', WP301REDIRECTS_ASSETS_URI . 'css/simple-301-redirects.css', [], filemtime(WP301REDIRECTS_ASSETS_DIR_PATH . 'css/simple-301-redirects.css'), 'all');
 
-			$dependencies = include_once SIMPLE301REDIRECTS_ASSETS_DIR_PATH . 'js/simple-301-redirects.core.min.asset.php';
+			$dependencies = include_once WP301REDIRECTS_ASSETS_DIR_PATH . 'js/simple-301-redirects.core.min.asset.php';
 			wp_enqueue_script(
 				'simple-301-redirects-admin-core',
-				SIMPLE301REDIRECTS_ASSETS_URI . 'js/simple-301-redirects.core.min.js',
+				WP301REDIRECTS_ASSETS_URI . 'js/simple-301-redirects.core.min.js',
 				$dependencies['dependencies'],
 				$dependencies['version'],
 				true
 			);
 			wp_localize_script('simple-301-redirects-admin-core', 'Simple301Redirects', [
 				's3r_nonce' => wp_create_nonce('simple301redirects'),
-				'plugin_root_url' => SIMPLE301REDIRECTS_PLUGIN_ROOT_URI,
-				'plugin_root_path' => SIMPLE301REDIRECTS_ROOT_DIR_PATH,
+				'plugin_root_url' => WP301REDIRECTS_PLUGIN_ROOT_URI,
+				'plugin_root_path' => WP301REDIRECTS_ROOT_DIR_PATH,
 				'site_url' => site_url('/'),
 				'route_path' => parse_url(admin_url(), PHP_URL_PATH),
-				'is_betterlinks_activated' => \Simple301Redirects\Helper::is_activated_betterlinks(),
+				'is_betterlinks_activated' => \Kamal\Wp301Redirects\Helper::is_activated_betterlinks(),
 				'hide_btl_notice' => get_option('simple301redirects_hide_btl_notice')
 			]);
 		}

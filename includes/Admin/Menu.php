@@ -1,5 +1,5 @@
 <?php 
-namespace Simple301Redirects\Admin;
+namespace Kamal\Wp301Redirects\Admin;
 
 class Menu {
     public function __construct()
@@ -18,7 +18,7 @@ class Menu {
      * @return void
      */
     public function create_menu() {
-        add_options_page('301 Redirects', '301 Redirects', 'manage_options', '301options', array($this,'load_main_template'));
+        add_options_page('WP 301 Redirects', 'WP 301 Redirects', 'manage_options', 'wp_redirect_options', array($this,'load_main_template'));
     }
 
     public function load_main_template()

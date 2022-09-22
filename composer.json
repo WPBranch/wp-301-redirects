@@ -1,0 +1,15 @@
+{
+    "name": "kamal/wp-301-redirects",
+    "autoload": {
+        "psr-4": {
+            "Kamal\\Wp301Redirects\\": "./includes"
+        }
+    },
+    "authors": [
+        {
+            "name": "Kamal Hosen",
+            "email": "kamalhosen8920@gmail.com"
+        }
+    ],
+    "require": {}
+}
