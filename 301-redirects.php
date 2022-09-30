@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name:     WP 301 Redirects
+ * Plugin Name:     Redirects for WP
  * Plugin URI:      https://wordpress.org/plugins/wp-301-redirects/
  * Description:     Create a list of URLs that you would like to 301 redirect to another page or site. Now with wildcard support.
  * Author:          WPBranch

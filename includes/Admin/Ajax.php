@@ -6,7 +6,7 @@ class Ajax {
     {
         add_action('wp_ajax_wp301redirects/admin/wildcard', [$this, 'wildcard']);
         add_action('wp_ajax_wp301redirects/admin/get_wildcard', [$this, 'get_wildcard']);
-        add_action('wp_ajax_wp301redirects/admin/install_plugin', [$this, 'install_plugin']);
+
         add_action('wp_ajax_wp301redirects/admin/activate_plugin', [$this, 'activate_plugin']);
         add_action('wp_ajax_wp301redirects/admin/hide_notice', [$this, 'hide_notice']);
         add_action('wp_ajax_wp301redirects/admin/fetch_all_links', [$this, 'fetch_all_links']);
@@ -29,18 +29,7 @@ class Ajax {
 		wp_send_json_success($_POST['toggle']);
 		wp_die();
     }
-    public function install_plugin()
-    {
-        check_ajax_referer('wp301redirects', 'security');
-        if( ! current_user_can( 'manage_options' ) ) wp_die();
-        $slug = isset($_POST['slug']) ? sanitize_text_field($_POST['slug']) : '';
-        $result = \Kamal\Wp301Redirects\Helper::install_plugin($slug);
-        if (is_wp_error($result)) {
-            wp_send_json_error($result->get_error_message());
-        }
-        wp_send_json_success(__('Plugin is installed successfully!', 'wp-301-redirects'));
-        wp_die();
-    }
+
 
     public function activate_plugin()
     {

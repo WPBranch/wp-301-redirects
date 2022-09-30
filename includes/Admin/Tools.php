@@ -11,8 +11,8 @@ class Tools
     }
     public function export_data()
     {
-        $page = isset($_GET['page']) ? $_GET['page'] : '';
-        $export = isset($_REQUEST['export']) ? $_REQUEST['export'] : false;
+        $page = isset($_GET['page']) ? sanitize_key($_GET['page']) : '';
+        $export = isset($_REQUEST['export']) ? rest_sanitize_boolean($_REQUEST['export']) : false;
         if ($page === 'wp_redirect_options' && $export == true && current_user_can('manage_options')) {
             check_ajax_referer('wp301redirects', 'security');
             $content = get_option(WP301REDIRECTS_SETTINGS_NAME);
@@ -43,8 +43,8 @@ class Tools
     }
     public function import_data()
     {
-        $page = isset($_GET['page']) ? $_GET['page'] : '';
-        $import = isset($_REQUEST['import']) ? $_REQUEST['import'] : false;
+        $page = isset($_GET['page']) ? sanitize_key($_GET['page']) : '';
+        $import = isset($_REQUEST['import']) ? rest_sanitize_boolean($_REQUEST['import']) : false;
         if ($page === 'wp_redirect_options' && $import == true && current_user_can('manage_options')) {
             check_ajax_referer('wp301redirects', 'security');
             $file = $_FILES['upload_file'];

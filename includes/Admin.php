@@ -35,20 +35,5 @@ class Admin {
 		}
 		return false;
     }
-    public function usage_tracker()
-    {
-        $tracker = Admin\WPBranch\PluginUsageTracker::get_instance( WP301REDIRECTS_PLUGIN_FILE, [
-            'opt_in'       => true,
-            'goodbye_form' => true,
-            'item_id'      => ''
-        ] );
-        $tracker->set_notice_options(array(
-            'notice' => __( 'Want to help make <strong>WP 301 Redirects</strong> even more awesome? You can get a <strong>10% discount</strong> coupon on our Premium products if you allow us to track the non-sensitive usage data.', 'wp-301-redirects' ),
-            'extra_notice' => __( 'We collect non-sensitive diagnostic data and plugin usage information. 
-            Your site URL, WordPress & PHP version, plugins & themes and email address to send you the 
-            discount coupon. This data lets us make sure this plugin always stays compatible with the most 
-            popular plugins and themes. No spam, I promise.', 'wp-301-redirects' ),
-        ));
-        $tracker->init();
-    }
+    
 }

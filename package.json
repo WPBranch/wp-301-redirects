@@ -16,9 +16,10 @@
 		"packages-update": "wp-scripts packages-update",
 		"start": "wp-scripts start",
 		"test:e2e": "wp-scripts test-e2e",
-		"test:unit": "wp-scripts test-unit-js"
+		"test:unit": "wp-scripts test-unit-js",
+		"plugin-zip": "wp-scripts plugin-zip"
 	},
-	"author": "wpdevteam",
+	"author": "wpbranch",
 	"dependencies": {
 		"axios": "^0.21.1",
 		"prop-types": "^15.7.2"
