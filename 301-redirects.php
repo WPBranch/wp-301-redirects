@@ -170,7 +170,7 @@ if (!class_exists("WP_301_Redirects")) {
 		 */
 		public function get_address() {
 			// return the full address
-			return $this->get_protocol().'://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
+			return esc_url( $this->get_protocol().'://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'] );
 		} // end function get_address
 
 		public function get_protocol() {
