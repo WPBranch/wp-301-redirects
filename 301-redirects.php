@@ -7,7 +7,7 @@
  * Author URI:      https://wpbranch.com/
  * Text Domain:     wp-301-redirects
  * Domain Path:     /languages
- * Version:         1.0.0
+ * Version:         1.0.1
  */
 
 /*  Copyright 2009-2021

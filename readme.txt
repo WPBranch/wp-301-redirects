@@ -1,10 +1,10 @@
 === WP 301 Redirects by WPBranch ===
-Contributors: wpbranch,ikamal
+Contributors: wpbranch
 Tags: 301 redirects, 301, shortlinks, link shortener, links, permalink, redirects, seo redirects, url redirect, 301 redirect, url, pretty links, short links, link tracking, affiliate links, urls
 Requires at least: 5.0
 Tested up to: 6.0
 Requires PHP: 5.4
-Stable tag: 1.0.0
+Stable tag: 1.0.1
 License: GPL-3.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
